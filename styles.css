@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body{
+    background: linear-gradient(to right, rgb(31, 217, 230), rgb(227, 230, 28));
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.clock{
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: 30vw;
+    height: 30vw;
+    margin: 5% auto;
+    position: relative;
+    border:2px solid black;
+    box-shadow: 0px 0px 10px black;
+}
+
+.clock::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    z-index: 11;
+}
+
+.clock .number{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.clock .number1{--rotation:30deg;}
+.clock .number2{--rotation:60deg;}
+.clock .number3{--rotation:90deg;}
+.clock .number4{--rotation:120deg;}
+.clock .number5{--rotation:150deg;}
+.clock .number6{--rotation:180deg;}
+.clock .number7{--rotation:210deg;}
+.clock .number8{--rotation:240deg;}
+.clock .number9{--rotation:270deg;}
+.clock .number10{--rotation:300deg;}
+.clock .number11{--rotation:330deg;}
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: 10;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    transform: translateX(50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock .hour{
+    --rotation: 0;
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+.clock .minute{
+    --rotation: 0;
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+.clock .second{
+    --rotation: 0;
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+p{
+    text-align: center;
+    font-weight: 600;
+}
